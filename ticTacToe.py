@@ -14,7 +14,7 @@
   Return Value: None
 
 """
-def drawBoard(board):
+def drawBoard(gameBoard):
   # Prints top 3 boxes
   print "   |   |   "
   print " " + gameBoard[0] + " | " + gameBoard[1] + " | " + gameBoard[2]
@@ -38,15 +38,6 @@ def drawBoard(board):
 
 
 """
-  Function name: playerCharChoice()
-  Parameters: 
-  Description: 
-  Return Value: 
-
-"""
-
-
-"""
   Function name: compMove()
   Parameters: 
   Description: 
@@ -65,17 +56,31 @@ def drawBoard(board):
 if __name__ == '__main__':
   # Prints welcome message for the user
   print "Welcome to tic-tac-toe!"
-
-  # Player chooses 'X' or 'O' for their moves
-  playerChar = raw_input("Which side would you like to be? ('X' or 'O') ")
   
+  # loops until a valid char is chosen
+  while(True):  
+    # Player chooses 'X' or 'O' for their moves
+    playerChar = raw_input("Which side would you like to be? ('X' or 'O') ")
+    
+    # If player chooses 'X', it sets the computer to 'O'
+    if (playerChar == 'X' or playerChar == 'x'):
+      compChar = 'O'
+      break
+
+    # If player chooses 'O', it sets the computer to 'X'
+    elif (playerChar == 'O' or playerChar == 'o'):
+      compChar = 'X'
+      break
+    
+    # If player doesn't choose 'X' or 'O'
+    print "Not a valid option"
+
   # Contains all possible positions for moves
   gameBoard = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
   
   # Draws the blank board
   drawBoard(gameBoard)
 
- 
   # Randomly choose who goes first
-
+  
 
